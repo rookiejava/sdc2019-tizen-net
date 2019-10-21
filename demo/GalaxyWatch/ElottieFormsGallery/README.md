@@ -1,4 +1,4 @@
-# ELottieSharp.Forms Gallery
+# ElottieSharp.Forms Gallery
 A beautiful lottie animation gallery for Galaxy Watch
 
 ### Screenshot
