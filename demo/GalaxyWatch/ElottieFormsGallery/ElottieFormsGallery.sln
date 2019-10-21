@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElottieFormsGallery.Tizen", "ElottieFormsGallery.Tizen\ElottieFormsGallery.Tizen.csproj", "{E10620C5-7524-48A5-822F-58E0995F07EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElottieFormsGallery", "ElottieFormsGallery\ElottieFormsGallery.csproj", "{074DCE58-AFDA-4710-A7C4-827B853C0F7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E10620C5-7524-48A5-822F-58E0995F07EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10620C5-7524-48A5-822F-58E0995F07EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E10620C5-7524-48A5-822F-58E0995F07EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E10620C5-7524-48A5-822F-58E0995F07EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{074DCE58-AFDA-4710-A7C4-827B853C0F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{074DCE58-AFDA-4710-A7C4-827B853C0F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{074DCE58-AFDA-4710-A7C4-827B853C0F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{074DCE58-AFDA-4710-A7C4-827B853C0F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C50CA67-E255-45A7-A44A-18A768708F6A}
+	EndGlobalSection
+EndGlobal
