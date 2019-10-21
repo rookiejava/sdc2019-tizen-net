@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WatchFaceSDC2019.WatchView">
+    <AbsoluteLayout x:Name="AbsLayout">
+        <Image AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Source="sdc19_bg.png" />
+        <Image x:Name="BGSymbolImage" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Source="sdc19_bg2.png" />
+        <Image x:Name="Symbol1" AbsoluteLayout.LayoutBounds="20, 0, 35, 35" AbsoluteLayout.LayoutFlags="None" Source="s-acc-red.png" Opacity="0" />
+        <Image x:Name="Symbol2" AbsoluteLayout.LayoutBounds="55, -30, 35, 35" AbsoluteLayout.LayoutFlags="None" Source="s-bracket-bule.png" Opacity="0" />
+        <Image x:Name="Symbol3" AbsoluteLayout.LayoutBounds="90, 30, 35, 35" AbsoluteLayout.LayoutFlags="None" Source="s-colon-blue.png" Opacity="0" />
+        <Image x:Name="Symbol4" AbsoluteLayout.LayoutBounds="125, 10, 35, 35" AbsoluteLayout.LayoutFlags="None" Source="s-dollor-sign-orange.png" Opacity="0" />
+        <Image x:Name="Symbol5" AbsoluteLayout.LayoutBounds="160, -10, 35, 35" AbsoluteLayout.LayoutFlags="None" Source="s-d-quote-white.png" Opacity="0" />
+        <Image x:Name="Symbol6" AbsoluteLayout.LayoutBounds="195, 20, 35, 35" AbsoluteLayout.LayoutFlags="None" Source="s-exclamation-orange.png" Opacity="0" />
+        <Image x:Name="Symbol7" AbsoluteLayout.LayoutBounds="230, -5, 35, 35" AbsoluteLayout.LayoutFlags="None" Source="s-plus-blue.png" Opacity="0" />
+        <Image x:Name="Symbol8" AbsoluteLayout.LayoutBounds="265, 20, 35, 35" AbsoluteLayout.LayoutFlags="None" Source="s-question-red.png" Opacity="0" />
+        <Image x:Name="Symbol9" AbsoluteLayout.LayoutBounds="300, -5, 35, 35" AbsoluteLayout.LayoutFlags="None" Source="s-v-orange.png" Opacity="0" />
+        <ImageButton x:Name="HeroImage1" AbsoluteLayout.LayoutBounds="20, 190, 111, 130" AbsoluteLayout.LayoutFlags="None" Source="{Binding Hero1ImageSource}" Clicked="OnHero1Clicked"/>
+        <ImageButton x:Name="HeroImage2" AbsoluteLayout.LayoutBounds="120, 190, 111, 130" AbsoluteLayout.LayoutFlags="None" Source="ghost2.png" Clicked="OnHero2Clicked" />
+        <ImageButton x:Name="HeroImage2Alt" AbsoluteLayout.LayoutBounds="120, 190, 111, 130" AbsoluteLayout.LayoutFlags="None" Source="monster2.png" Clicked="OnHero2Clicked" IsVisible="False" />
+        <ImageButton x:Name="HeroImage3" AbsoluteLayout.LayoutBounds="220, 190, 111, 130" AbsoluteLayout.LayoutFlags="None" Source="{Binding Hero3ImageSource}" Clicked="OnHero3Clicked"/>
+        <ImageButton x:Name="Hero3Eyes" AbsoluteLayout.LayoutBounds="220, 190, 111, 130" AbsoluteLayout.LayoutFlags="None" Source="eyeballs.png" Clicked="OnHero3Clicked" IsVisible="{Binding Hero3EyeIsVisible}"/>
+        <Label
+            x:Name="LabelDate"
+            AbsoluteLayout.LayoutBounds="130, 30, 150, 40"
+            AbsoluteLayout.LayoutFlags="None"
+            TextColor="{Binding TextColor}"
+            FontSize="10"
+            FontFamily="SamsungSharpSans"
+            Text="{Binding Date}"/>
+        <Label
+            x:Name="LabelTime"
+            AbsoluteLayout.LayoutBounds="80, 80, 220, 80"
+            AbsoluteLayout.LayoutFlags="None"
+            TextColor="{Binding TextColor}"
+            FontSize="24"
+            FontFamily="SamsungSharpSans"
+            Text="{Binding Time}"/>
+    </AbsoluteLayout>
+</ContentView>
