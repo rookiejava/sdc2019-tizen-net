@@ -14,11 +14,15 @@ namespace ElottieFormsGallery
             All = new ObservableCollection<LottieDataModel> {
                 new LottieDataModel
                 {
+                    AnimationFile = "funky_chicken.json"
+                },
+                new LottieDataModel
+                {
                     AnimationFile = "a_mountain.json"
                 },
                 new LottieDataModel
                 {
-                    AnimationFile = "cooking.json"
+                    AnimationFile = "happy.json"
                 },
                 new LottieDataModel
                 {
@@ -26,11 +30,7 @@ namespace ElottieFormsGallery
                 },
                 new LottieDataModel
                 {
-                    AnimationFile = "emoji_wink.json"
-                },
-                new LottieDataModel
-                {
-                    AnimationFile = "fingerprint_success.json"
+                    AnimationFile = "material_wave_loading.json"
                 },
                 new LottieDataModel
                 {
@@ -38,19 +38,23 @@ namespace ElottieFormsGallery
                 },
                 new LottieDataModel
                 {
-                    AnimationFile = "icon_animation.json"
-                },
-                new LottieDataModel
-                {
-                    AnimationFile = "like.json"
-                },
-                new LottieDataModel
-                {
                     AnimationFile = "loading.json"
                 },
                 new LottieDataModel
                 {
-                    AnimationFile = "maps.json"
+                    AnimationFile = "balloons_with_string.json"
+                },
+                new LottieDataModel
+                {
+                    AnimationFile = "acrobatics.json"
+                },
+                new LottieDataModel
+                {
+                    AnimationFile = "loading_rectangles.json"
+                },
+                new LottieDataModel
+                {
+                    AnimationFile = "telegram.json"
                 }
             };
         }
