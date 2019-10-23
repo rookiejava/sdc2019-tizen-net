@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="ElottieFormsTVGallery.MainPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:e="clr-namespace:ElottieSharp.Forms;assembly=ElottieSharp.Forms">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <e:ElottieAnimationView AnimationFile="LottieLogo2.json" AutoRepeat="True" AutoPlay="True" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+        <e:ElottieAnimationView AnimationFile="party_penguin.json" AutoRepeat="True" AutoPlay="True" Grid.Row="0" Grid.Column="2" />
+        <e:ElottieAnimationView AnimationFile="balloons_with_string.json" Scale="2" AutoRepeat="True" AutoPlay="True" Grid.Row="0" Grid.Column="3" />
+        <e:ElottieAnimationView AnimationFile="happy.json" AutoRepeat="True" AutoPlay="True" Grid.Row="1" Grid.Column="2" />
+        <e:ElottieAnimationView AnimationFile="acrobatics.json" AutoRepeat="True" AutoPlay="True" Grid.Row="1" Grid.Column="3" />
+        <e:ElottieAnimationView AnimationFile="TwitterHeart.json" AutoRepeat="True" AutoPlay="True" Grid.Row="2" Grid.Column="2" />
+        <e:ElottieAnimationView AnimationFile="anubis.json" AutoRepeat="True" AutoPlay="True" Grid.Row="2" Grid.Column="3" />
+        <e:ElottieAnimationView AnimationFile="funky_chicken.json" AutoRepeat="True" AutoPlay="True" Grid.Row="2" Grid.Column="0" />
+        <e:ElottieAnimationView AnimationFile="funky_chicken.json" AutoRepeat="True" AutoPlay="True" Grid.Row="2" Grid.Column="1" />
+    </Grid>
+</ContentPage>
