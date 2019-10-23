@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PrettyWeather.PrettyWeatherPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:converters="clr-namespace:PrettyWeather.Converters"
+    xmlns:view="clr-namespace:PrettyWeather.View"
+    xmlns:prettyweather="clr-namespace:PrettyWeather"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="WeatherPage"
+    mc:Ignorable="d"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="CityItemTemplate">
+            <Grid>
+                <BoxView></BoxView>
+                <Grid Padding="10">
+                    <prettyweather:ViewHolder WidthRequest="50" BackgroundColor="Transparent" Focused="ViewHolder_Focused" Unfocused="ViewHolder_Focused" />
+                    <pancake:PancakeView
+                    CornerRadius="20,20,20,0" Padding="8"
+                    BackgroundColor="{Binding CurrentWeather.Temp, Converter={converters:BackgroundColorConverter IsStart=True}}">
+                    <StackLayout Spacing="0" VerticalOptions="Center">
+                        <Label Text="{Binding Name}" 
+                               FontSize="Large"
+                               WidthRequest="280"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               TextColor="White"/>
+                        <Label Text="{Binding CurrentWeather.Temp, StringFormat='{0:D}°'}"
+                               FontSize="Large"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                    </StackLayout>
+                </pancake:PancakeView>
+                <Label BackgroundColor="Transparent" PropertyChanged="Label_PropertyChanged">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding Name}" TextColor="Transparent" />
+                            <Span Text="{Binding CurrentCityName}" TextColor="Transparent" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="FooterItemTemplate">
+            <Grid Padding="10">
+                <pancake:PancakeView WidthRequest="200"
+                                     CornerRadius="20,20,20,0" Padding="8"
+                                     BackgroundColor="#B8B8B8">
+                    <Image Source="gridIcon.png"  HorizontalOptions="Center" Scale="0.7"/>
+                </pancake:PancakeView>
+            </Grid>
+        </DataTemplate>
+        <view:CityDataTemplateSelector x:Key="CityTemplateSelector"
+                                       Cities="{StaticResource CityItemTemplate}"
+                                       FooterItem="{StaticResource FooterItemTemplate}" />
+    </ContentPage.Resources>
+
+    <pancake:PancakeView BackgroundGradientStartColor="{Binding Temp, Converter={converters:BackgroundColorConverter IsStart=True}}"
+                         BackgroundGradientEndColor="{Binding Temp, Converter={converters:BackgroundColorConverter IsStart=False}}">
+            <Grid Padding="{OnPlatform Android='0,24,0,0', iOS='0,44,0,0', Tizen='0,60,0,0'}"
+                  RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Grid.RowSpan="4" Grid.Column="0"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand"
+                       Opacity=".9"
+                       Source="{Binding LandmarkSource}"
+                       Margin="0,0,0,-80"/>
+
+            <Label Grid.Row="0" Grid.Column="1"
+                   Text="{Binding SelectedCity.Name}"
+                   FontSize="180"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource MainTextColor}"/>
+                <Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="1"
+                           Style="{StaticResource LabelTemperatureStyle}"
+                           Text="{Binding SelectedCity.CurrentWeather.Temp}"
+                           FontSize="600" />
+                    <Label Grid.Column="2"
+                           Text="°"
+                           Style="{StaticResource LabelTemperatureStyle}"
+                           FontSize="500"
+                           HorizontalOptions="Start"/>
+                </Grid>
+
+                <StackLayout Grid.Row="2" Grid.Column="1"
+                             Spacing="0"
+                             Orientation="Horizontal"
+                             HorizontalOptions="Center">
+                    <Image Source="{Binding WeatherURL}" VerticalOptions="CenterAndExpand" />
+                    <Label
+                        Text="{Binding SelectedCity.Weather[0].Main}"
+                        FontSize="150"
+                        TextColor="{StaticResource MainTextColor}"/>
+                </StackLayout>
+                <Label Grid.Row="3" Grid.Column="1"
+                       HorizontalOptions="Center"
+                       Margin="0, 0, 0, 50"
+                       Text= "{Binding Date}"
+                       FontSize="120"
+                       TextColor="{StaticResource MainTextColor}"/>
+                <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Grid BackgroundColor="#F5F5F5F5" Opacity=".7" />
+                    <prettyweather:MyCollectionView x:Name="collection"
+                                                    HeightRequest="150"
+                                                    Margin="70,20"
+                                                    VerticalOptions="End"
+                                                    SelectionMode="Single"
+                                                    ItemsLayout="HorizontalList"
+                                                    ItemsSource="{Binding AllCities}"
+                                                    ItemTemplate="{StaticResource CityTemplateSelector}"
+                                                    SelectedItem="{Binding SelectedCityItem}"
+                                                    SelectionChanged="SelectionChanged"
+                                                    HorizontalScrollBarVisibility="Never"
+                                                    ItemSizingStrategy="MeasureFirstItem" />
+                </Grid>
+            </Grid>
+        </pancake:PancakeView>
+</ContentPage>
