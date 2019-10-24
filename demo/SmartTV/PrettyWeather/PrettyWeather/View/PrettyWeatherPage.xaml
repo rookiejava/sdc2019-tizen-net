@@ -21,8 +21,9 @@
                 <Grid Padding="10">
                     <prettyweather:ViewHolder WidthRequest="50" BackgroundColor="Transparent" Focused="ViewHolder_Focused" Unfocused="ViewHolder_Focused" />
                     <pancake:PancakeView
-                    CornerRadius="20,20,20,0" Padding="8"
-                    BackgroundColor="{Binding CurrentWeather.Temp, Converter={converters:BackgroundColorConverter IsStart=True}}">
+                        CornerRadius="20,20,20,0" Padding="8"
+                        BackgroundColor="{Binding CurrentWeather.Temp, Converter={converters:BackgroundColorConverter IsStart=True}}"
+                        AutomationId="{Binding Name}" >
                     <StackLayout Spacing="0" VerticalOptions="Center">
                         <Label Text="{Binding Name}" 
                                FontSize="Large"
@@ -89,7 +90,8 @@
                    Text="{Binding SelectedCity.Name}"
                    FontSize="180"
                    HorizontalOptions="Center"
-                   TextColor="{StaticResource MainTextColor}"/>
+                   TextColor="{StaticResource MainTextColor}"
+                   AutomationId="cityName"/>
                 <Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" ColumnSpacing="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
