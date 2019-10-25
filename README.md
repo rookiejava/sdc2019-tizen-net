@@ -4,10 +4,39 @@
 A curated list of demo/samples/resources of Tizen .NET from [Samsung Developer Conference (SDC) 2019](https://www.samsungdeveloperconference.com/).
 
 ## Session
-TBD
+- [What's New in Tizen?: 5.5 Platform Update and Developer Environment](https://www.samsungdeveloperconference.com/schedule/session/1089296)
+	- Wednesday, October 30, 12:30 - 1:15 PM
+	- Session Room 212
+	- Speakers
+		- Hobum Vincent Kwon
+		- David Ortinau
+		- Diego Lizarazo Rivera
+
  
 ## Exhibition
-TBD
+: All following booth are located at AI/IoT zone in Tech Square.
+- Tizen for Samsung Products
+	- New features on Tizen .NET framework
+	- Lottie Animation on products
+	- Xamarin.Forms 4.3.0 new Features
+	- Xamarin.Essentials
+ - Material Design
+	- UI Automation
+	- Demo applications on Smart Watch and Smart TV
+	- Introduction for Family Hub: FamilyBoard
+
+- Tizen .NET SDK
+	- Tizen .NET development environment
+		- Visual Studio Extension for Tizen
+		- Visual Studio for Mac Extension for Tizen
+- Tizen Partners | TecAce
+	- .NET Applications
+		- Ring Doorbell Viewer
+		- Uber
+- Tizen Partners | MR TIME
+	- Watchface service scinario between smart watch and phone
 
 ## CodeLab
-TBD
+: Get hands-on experience with our latest SDKs and developer tools with the help of Samsung engineers.
+- Digital WatchFace application.
+- SmartLevel application demonstrating usage of accelerometer sensor.
