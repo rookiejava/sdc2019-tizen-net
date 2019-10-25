@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c:CirclePage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:c="clr-namespace:Tizen.Wearable.CircularUI.Forms;assembly=Tizen.Wearable.CircularUI.Forms"
+              xmlns:viewmodel="clr-namespace:PrettyWeather.ViewModel"
+              xmlns:local="clr-namespace:PrettyWeather"
+              xmlns:converters="clr-namespace:PrettyWeather.Converters"
+              x:Class="PrettyWeather.MainPage"
+              BackgroundColor="{Binding SelectedCity.CurrentWeather.Temp, Converter={converters:BackgroundColorConverter IsStart=True}}">
+
+    <c:CirclePage.BindingContext>
+        <viewmodel:WeatherViewModel />
+    </c:CirclePage.BindingContext>
+    
+    <c:CirclePage.Content>
+        <AbsoluteLayout>
+            <ContentView AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout>
+                    <ImageButton HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           Opacity=".9"
+                           Source="{Binding LandmarkSource}"
+                           HeightRequest="90"
+                           Margin="0,0,0,-70"
+                           Clicked="OnImageClicked" />
+                    <Label Text="{Binding SelectedCity.Name}"
+                           FontSize="10"
+                           HorizontalOptions="Center"
+                           TextColor="{StaticResource MainTextColor}" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1"
+                                   Style="{StaticResource LabelTemperatureStyle}"
+                                   Text="{Binding SelectedCity.CurrentWeather.Temp}" />
+                        <Label Grid.Column="2"
+                                   Text="°"
+                                   Style="{StaticResource LabelTemperatureStyle}"
+                                   HorizontalOptions="Start"/>
+                    </Grid>
+                    <StackLayout Spacing="0"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="Center"
+                                 Margin="0,-40,0,0">
+                        <Image Source="{Binding WeatherURL}" />
+                        <Label Text="{Binding SelectedCity.Weather[0].Main}"
+                               FontSize="10"
+                               VerticalOptions="Center"
+                               TextColor="{StaticResource MainTextColor}"/>
+                    </StackLayout>
+                </StackLayout>
+            </ContentView>
+            <ContentView AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" IsVisible="{Binding SettingEnabled}">
+                <c:CircleListView x:Name="circleList" ItemTapped="OnItemTapped" ItemsSource="{Binding AllCities}">
+                    <c:CircleListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" />
+                        </DataTemplate>
+                    </c:CircleListView.ItemTemplate>
+                </c:CircleListView>
+            </ContentView>
+        </AbsoluteLayout>
+    </c:CirclePage.Content>
+</c:CirclePage>
