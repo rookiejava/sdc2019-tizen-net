@@ -21,7 +21,8 @@
         <ImageButton x:Name="Hero3Eyes" AbsoluteLayout.LayoutBounds="220, 190, 111, 130" AbsoluteLayout.LayoutFlags="None" Source="eyeballs.png" Clicked="OnHero3Clicked" IsVisible="{Binding Hero3EyeIsVisible}"/>
         <Label
             x:Name="LabelDate"
-            AbsoluteLayout.LayoutBounds="130, 30, 150, 40"
+            HorizontalTextAlignment="Center"
+            AbsoluteLayout.LayoutBounds="110, 30, 150, 40"
             AbsoluteLayout.LayoutFlags="None"
             TextColor="{Binding TextColor}"
             FontSize="10"
@@ -29,7 +30,8 @@
             Text="{Binding Date}"/>
         <Label
             x:Name="LabelTime"
-            AbsoluteLayout.LayoutBounds="80, 80, 220, 80"
+            HorizontalTextAlignment="Center"
+            AbsoluteLayout.LayoutBounds="70, 80, 230, 90"
             AbsoluteLayout.LayoutFlags="None"
             TextColor="{Binding TextColor}"
             FontSize="24"
