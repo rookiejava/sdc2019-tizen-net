@@ -10,8 +10,8 @@ A curated list of demo/samples/resources of Tizen .NET from [Samsung Developer C
 	- Speakers
 		- Hobum Vincent Kwon
 		- David Ortinau
-		- Diego Lizarazo Rivera
-
+		- Diego Lizarazo Rivera 
+	-  [Watch video on Youtube](https://youtu.be/fU5Yx8M0KOk)
  
 ## Exhibition
 : All following booth are located at AI/IoT zone in Tech Square.
@@ -38,5 +38,5 @@ A curated list of demo/samples/resources of Tizen .NET from [Samsung Developer C
 
 ## CodeLab
 : Get hands-on experience with our latest SDKs and developer tools with the help of Samsung engineers.
-- Digital WatchFace application.
-- SmartLevel application demonstrating usage of accelerometer sensor.
+- [Digital WatchFace application.](http://tizenschool.org/tutorial/147/contents/1)
+- [SmartLevel application demonstrating usage of accelerometer sensor.](http://tizenschool.org/tutorial/145/contents/1)
