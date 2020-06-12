@@ -84,11 +84,11 @@
                     VerticalOptions="FillAndExpand"
                     Opacity=".9"
                     Source="{Binding LandmarkSource}"
-                    Margin="0,-70,0,-70"/>
+                    Margin="0,-80,0,-70"/>
 
             <Label Grid.Row="1" Grid.Column="0"
                     Text="{Binding SelectedCity.Name}"
-                    FontSize="90"
+                    FontSize="50"
                     HorizontalOptions="Center"
                     TextColor="{StaticResource MainTextColor}"
                     AutomationId="cityName"/>
@@ -101,11 +101,11 @@
                 <Label Grid.Column="1"
                         Style="{StaticResource LabelTemperatureStyle}"
                         Text="{Binding SelectedCity.CurrentWeather.Temp}"
-                        FontSize="150" />
+                        FontSize="70" />
                 <Label Grid.Column="2"
                         Text="°"
                         Style="{StaticResource LabelTemperatureStyle}"
-                        FontSize="90"
+                        FontSize="70"
                         HorizontalOptions="Start"/>
             </Grid>
 
@@ -116,19 +116,20 @@
                 <Image Source="{Binding WeatherURL}" VerticalOptions="CenterAndExpand" />
                 <Label
                     Text="{Binding SelectedCity.Weather[0].Main}"
-                    FontSize="70"
-                    TextColor="{StaticResource MainTextColor}"/>
+                    FontSize="35"
+                    TextColor="{StaticResource MainTextColor}"
+                    VerticalOptions="Center"/>
             </StackLayout>
             <Label Grid.Row="4" Grid.Column="0"
                     HorizontalOptions="Center"
                     Margin="0, 0, 0, 50"
                     Text= "{Binding Date}"
-                    FontSize="75"
+                    FontSize="30"
                     TextColor="{StaticResource MainTextColor}"/>
             <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="1">
                 <Grid BackgroundColor="#F5F5F5F5" Opacity=".7" />
                 <prettyweather:MyCollectionView x:Name="collection"
-                                                HeightRequest="180"
+                                                HeightRequest="150"
                                                 Margin="20,20"
                                                 VerticalOptions="End"
                                                 SelectionMode="Single"

@@ -13,6 +13,8 @@ namespace PrettyWeather
         public PrettyWeatherPage()
         {
             InitializeComponent();
+                Console.WriteLine($"######### device width: {Application.Current.MainPage.Width}");
+                Console.WriteLine($"######### thiswidth: {this.Width}");
         }
 
         protected override void OnAppearing()
