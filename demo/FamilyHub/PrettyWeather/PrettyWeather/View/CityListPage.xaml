@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:view="clr-namespace:PrettyWeather.View"
+             xmlns:prettyweather="clr-namespace:PrettyWeather"
+             xmlns:converters="clr-namespace:PrettyWeather.Converters"
+             mc:Ignorable="d"
+             x:Class="PrettyWeather.CityListPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             BackgroundColor="#CED7DF">
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="CityItemTemplate">
+            <Grid Padding="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Fill">
+                <pancake:PancakeView CornerRadius="20,20,20,0" Padding="8" 
+                                BackgroundColor="{Binding CurrentWeather.Temp, Converter={converters:BackgroundColorConverter}}">
+                    <StackLayout Spacing="0">
+                        <Label Text="{Binding Name}"
+                               FontSize="Large"
+                               HorizontalOptions="Start"
+                               VerticalOptions="End"
+                               WidthRequest="300"
+                               Margin="15"
+                               FontAttributes="Bold"
+                               TextColor="#FFFFFF"/>
+                        <Label Text="{Binding CurrentWeather.Temp, StringFormat='{0:D}°'}"
+                               FontSize="Large"
+                               HorizontalOptions="End"
+                               VerticalOptions="Start"
+                               Margin="15"
+                               FontAttributes="Bold"
+                               TextColor="#FFFFFF"/>
+                    </StackLayout>
+                </pancake:PancakeView>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="FooterItemTemplate">
+            <Grid Padding="10">
+                <pancake:PancakeView CornerRadius="20,20,20,0"
+                                     Padding="8"
+                                     BackgroundColor="#B8B8B8"
+                                     WidthRequest="180">
+                    <Image Source="LinearIcon.png"  HorizontalOptions="Center" Scale="0.7" />
+                </pancake:PancakeView>
+            </Grid>
+        </DataTemplate>
+        <view:CityDataTemplateSelector x:Key="CityTemplateSelector"
+                                       Cities="{StaticResource CityItemTemplate}"
+                                       FooterItem="{StaticResource FooterItemTemplate}" />
+    </ContentPage.Resources>
+
+    <Grid Padding="{OnPlatform Tizen='60,30'}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0"
+               Text="World Cities"
+               FontSize="90"
+               FontAttributes="Bold"
+               TextColor="#797979"
+               Margin="20"
+               HorizontalOptions="Center"/>
+
+        <prettyweather:MyCollectionView x:Name="collection" Grid.Row="1"
+                                        ItemsSource="{Binding AllCities}"
+                                        ItemTemplate="{StaticResource CityTemplateSelector}"
+                                        HorizontalOptions="Center"
+                                        SelectionMode="Single"
+                                        ItemSizingStrategy="MeasureFirstItem"
+                                        SelectionChanged="CityListSelectionChanged"
+                                        Margin="20,40">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Span="3"
+                                 Orientation="Horizontal"
+                                 VerticalItemSpacing="20"
+                                 HorizontalItemSpacing="20"/>
+            </CollectionView.ItemsLayout>
+
+        </prettyweather:MyCollectionView>
+    </Grid>
+</ContentPage>
