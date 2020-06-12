@@ -1,7 +1,7 @@
 # Pretty Weather
 ------
 
-This project is forked from [jamesmontemagno/app-pretty-weather](https://github.com/jamesmontemagno/app-pretty-weather), and customized to fit on FamilyHub.
+This project is forked from [jamesmontemagno/app-pretty-weather](https://github.com/jamesmontemagno/app-pretty-weather), and customized to fit on mobile emulator.
 
 A very pretty weather application built with Xamarin.
 
