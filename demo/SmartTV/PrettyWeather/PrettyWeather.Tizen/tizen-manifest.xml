@@ -3,7 +3,7 @@
     <profile name="common" />
     <ui-application appid="org.tizen.PrettyWeather.Tizen" exec="PrettyWeather.Tizen.dll" multiple="false" nodisplay="false" taskmanage="true" type="dotnet" launch_mode="single">
         <label>PrettyWeather.Tizen</label>
-        <icon>PrettyWeather.Tizen.png</icon>
+        <icon>PrettyWeather.png</icon>
         <metadata key="http://tizen.org/metadata/prefer_dotnet_aot" value="true" />
         <splash-screens />
     </ui-application>
